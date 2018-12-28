@@ -14,6 +14,7 @@
 		DF338FAA21D5CBBB00964959 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF338FA921D5CBBB00964959 /* Assets.xcassets */; };
 		DF338FAD21D5CBBB00964959 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF338FAB21D5CBBB00964959 /* LaunchScreen.storyboard */; };
 		DF338FB521D5DE7D00964959 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF338FB421D5DE7D00964959 /* LoginViewController.swift */; };
+		DF338FB721D5ECB100964959 /* AuthenticatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF338FB621D5ECB100964959 /* AuthenticatedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		DF338FAC21D5CBBB00964959 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF338FAE21D5CBBB00964959 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF338FB421D5DE7D00964959 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DF338FB621D5ECB100964959 /* AuthenticatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				DF338FA221D5CBB900964959 /* AppDelegate.swift */,
+				DF338FB621D5ECB100964959 /* AuthenticatedViewController.swift */,
 				DF338FB421D5DE7D00964959 /* LoginViewController.swift */,
 				DF338FA421D5CBB900964959 /* ViewController.swift */,
 				DF338FA621D5CBB900964959 /* Main.storyboard */,
@@ -207,6 +210,7 @@
 			files = (
 				DF338FB521D5DE7D00964959 /* LoginViewController.swift in Sources */,
 				DF338FA521D5CBB900964959 /* ViewController.swift in Sources */,
+				DF338FB721D5ECB100964959 /* AuthenticatedViewController.swift in Sources */,
 				DF338FA321D5CBB900964959 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
