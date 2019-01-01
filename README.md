@@ -56,7 +56,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 List an 3rd party libraries, icons, graphics, or other assets you used in your app.
 
-- [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
+- [Parse](https://cocoapods.org/pods/Parse) - A library that gives you access to the powerful Parse cloud platform from your iOS or OS X app.
 
 
 ## Notes
