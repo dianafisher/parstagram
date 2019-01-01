@@ -2,12 +2,17 @@
 
 * Parse Setup and Authentication video uses old version of XCode.
 
-* The CocoaPods guide has a lot of technical information that is not necessary for students at this level. This should probably be reduced to something like - "A CocoaPod is a package of code written by somebody else that we can download and use in our project." Or possibly even, "We need to grab some code off the internet (called a CocoaPod) which will help us connect to our Parse server."
+* The **CocoaPods** guide has a lot of technical information that is not necessary for students at this level. This should probably be reduced to something like - "A CocoaPod is a package of code written by somebody else that we can download and use in our project." Or possibly even, "We need to grab some code off the internet (called a CocoaPod) which will help us connect to our Parse server."
 
 * Another issue with the CocoaPods guide is it has Alamofire and OAuthSwift packages listed, but not Parse.
 
-### Suggestion
-Have students watch the Parse Setup and Authentication video only. The guide is too detailed. Or update the guide to a watered down version. For example:
+* **Building Data driven Apps with Parse** guide needs updating.
+    * Error instead of NSError
+    * PFFile is now PFFileObject
+    * Update Swift syntax
+    * Too much technical detail
+
+### Possible watered-down version of CocoaPods guide:
 
 # CocoaPods
 ## Overview
@@ -72,14 +77,14 @@ pod install
 Now open the XCode Workspace file.
 
 
-## Concepts Covered
+## Concepts Covered in Parstagram Project
 * CocoaPod
     * Installation
     * Usage
         * import Parse
 
 * Setting up an app on Heroku
-    * What is Heroku
+    * What Heroku is used for
 * Creating a new UIViewController class
     * Associating the new UIViewController class with a view controller in the storyboard.
     * What is an "initial view controller"
@@ -96,18 +101,36 @@ Now open the XCode Workspace file.
     * User table
 * App Transport Security
 * Parse User creation and login
-    * signUpInBackgroundWithBlock
-    * success block
+    * ~~signUpInBackgroundWithBlock~~
+    * ~~success block~~
     * Error
         * Error codes
         * Error handling
         * Casting from Error to NSError (Swift 4)
         * Showing an alert
-    * Caching a user
+    * Data Persistence
+        * Caching a user
+* Logout
+    * Need to update code snippet to use Error instead of NSError.
 * Segue
     * From view controller instead of from button
     * Modal display
     * Segue identifier
     * Perform segue
 * Storyboard identifier for a UIViewController
+* Take A Photo
+    * Info.plist file
+        * Opening as XML
+        * Should probably just tell students to add text instead of editing the property list.
+    * Implementing a Protocol    
+    
+* Tap Gesture Recognizer
+    * On UIImageView
+        * User interaction enabled = true
+* View the last 20 posts
+    * Table view
+    * Custom table view cell
+    * Fetching data
+* Tabbed View Controller (optional)
+
 
