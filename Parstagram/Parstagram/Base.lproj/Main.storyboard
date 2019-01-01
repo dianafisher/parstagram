@@ -116,6 +116,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nd8-qQ-7J1">
                                 <rect key="frame" x="163" y="453" width="49" height="30"/>
                                 <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="onSubmitPressed:" destination="wQq-JE-EY0" eventType="touchUpInside" id="Euh-QO-xhZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -131,6 +134,9 @@
                         <viewLayoutGuide key="safeArea" id="7g2-nj-ETm"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Capture" image="insta_camera_btn" selectedImage="insta_camera_btn" id="4kV-5l-qSP"/>
+                    <connections>
+                        <outlet property="capturedImageView" destination="6Z6-XH-FlA" id="fxd-FU-Hea"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n9G-aM-IfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="xVf-jt-nQN">
