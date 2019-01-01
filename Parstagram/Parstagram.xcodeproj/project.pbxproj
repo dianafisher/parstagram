@@ -16,6 +16,8 @@
 		DF338FB521D5DE7D00964959 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF338FB421D5DE7D00964959 /* LoginViewController.swift */; };
 		DF338FB921DAF1D800964959 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF338FB821DAF1D800964959 /* ProfileViewController.swift */; };
 		DF338FBB21DAF87F00964959 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF338FBA21DAF87F00964959 /* CaptureViewController.swift */; };
+		DF338FBD21DB285E00964959 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF338FBC21DB285E00964959 /* FeedViewController.swift */; };
+		DF338FBF21DB318B00964959 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF338FBE21DB318B00964959 /* PostTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		DF338FB421D5DE7D00964959 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DF338FB821DAF1D800964959 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		DF338FBA21DAF87F00964959 /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
+		DF338FBC21DB285E00964959 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		DF338FBE21DB318B00964959 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +90,9 @@
 			children = (
 				DF338FA221D5CBB900964959 /* AppDelegate.swift */,
 				DF338FBA21DAF87F00964959 /* CaptureViewController.swift */,
+				DF338FBC21DB285E00964959 /* FeedViewController.swift */,
 				DF338FB421D5DE7D00964959 /* LoginViewController.swift */,
+				DF338FBE21DB318B00964959 /* PostTableViewCell.swift */,
 				DF338FB821DAF1D800964959 /* ProfileViewController.swift */,
 				DF338FA421D5CBB900964959 /* ViewController.swift */,
 				DF338FA621D5CBB900964959 /* Main.storyboard */,
@@ -211,10 +217,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF338FBF21DB318B00964959 /* PostTableViewCell.swift in Sources */,
 				DF338FB521D5DE7D00964959 /* LoginViewController.swift in Sources */,
 				DF338FA521D5CBB900964959 /* ViewController.swift in Sources */,
 				DF338FB921DAF1D800964959 /* ProfileViewController.swift in Sources */,
 				DF338FA321D5CBB900964959 /* AppDelegate.swift in Sources */,
+				DF338FBD21DB285E00964959 /* FeedViewController.swift in Sources */,
 				DF338FBB21DAF87F00964959 /* CaptureViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
