@@ -15,6 +15,7 @@
 		DF338FAD21D5CBBB00964959 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF338FAB21D5CBBB00964959 /* LaunchScreen.storyboard */; };
 		DF338FB521D5DE7D00964959 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF338FB421D5DE7D00964959 /* LoginViewController.swift */; };
 		DF338FB921DAF1D800964959 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF338FB821DAF1D800964959 /* ProfileViewController.swift */; };
+		DF338FBB21DAF87F00964959 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF338FBA21DAF87F00964959 /* CaptureViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		DF338FAE21D5CBBB00964959 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF338FB421D5DE7D00964959 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DF338FB821DAF1D800964959 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		DF338FBA21DAF87F00964959 /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				DF338FA221D5CBB900964959 /* AppDelegate.swift */,
+				DF338FBA21DAF87F00964959 /* CaptureViewController.swift */,
 				DF338FB421D5DE7D00964959 /* LoginViewController.swift */,
 				DF338FB821DAF1D800964959 /* ProfileViewController.swift */,
 				DF338FA421D5CBB900964959 /* ViewController.swift */,
@@ -212,6 +215,7 @@
 				DF338FA521D5CBB900964959 /* ViewController.swift in Sources */,
 				DF338FB921DAF1D800964959 /* ProfileViewController.swift in Sources */,
 				DF338FA321D5CBB900964959 /* AppDelegate.swift in Sources */,
+				DF338FBB21DAF87F00964959 /* CaptureViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

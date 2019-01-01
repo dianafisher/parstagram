@@ -91,18 +91,55 @@
         <!--Capture-->
         <scene sceneID="12w-Ic-lId">
             <objects>
-                <viewController id="wQq-JE-EY0" sceneMemberID="viewController">
+                <viewController id="wQq-JE-EY0" customClass="CaptureViewController" customModule="Parstagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WBw-mk-nyw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="6Z6-XH-FlA">
+                                <rect key="frame" x="16" y="40" width="343" height="343"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="H2W-o8-MPu"/>
+                                    <constraint firstAttribute="height" constant="343" id="YvF-8m-Urs"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="xVf-jt-nQN" appends="YES" id="E4i-Xc-8Vk"/>
+                                </connections>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a caption" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OwX-OH-GjU">
+                                <rect key="frame" x="16" y="403" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nd8-qQ-7J1">
+                                <rect key="frame" x="163" y="453" width="49" height="30"/>
+                                <state key="normal" title="Submit"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7g2-nj-ETm" firstAttribute="trailing" secondItem="OwX-OH-GjU" secondAttribute="trailing" constant="16" id="4GX-k6-J8D"/>
+                            <constraint firstItem="OwX-OH-GjU" firstAttribute="top" secondItem="6Z6-XH-FlA" secondAttribute="bottom" constant="20" id="9CW-9N-tN1"/>
+                            <constraint firstItem="6Z6-XH-FlA" firstAttribute="centerX" secondItem="WBw-mk-nyw" secondAttribute="centerX" id="Aj4-UC-QN8"/>
+                            <constraint firstItem="nd8-qQ-7J1" firstAttribute="top" secondItem="OwX-OH-GjU" secondAttribute="bottom" constant="20" id="Ego-gO-dlj"/>
+                            <constraint firstItem="nd8-qQ-7J1" firstAttribute="centerX" secondItem="WBw-mk-nyw" secondAttribute="centerX" id="YwW-46-ReP"/>
+                            <constraint firstItem="6Z6-XH-FlA" firstAttribute="top" secondItem="7g2-nj-ETm" secondAttribute="top" constant="20" id="p7S-Z6-lEo"/>
+                            <constraint firstItem="OwX-OH-GjU" firstAttribute="leading" secondItem="7g2-nj-ETm" secondAttribute="leading" constant="16" id="zNN-xf-8Ti"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7g2-nj-ETm"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Capture" image="insta_camera_btn" selectedImage="insta_camera_btn" id="4kV-5l-qSP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n9G-aM-IfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="xVf-jt-nQN">
+                    <connections>
+                        <action selector="onTapped:" destination="wQq-JE-EY0" id="uZl-tT-d5F"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2534" y="405"/>
+            <point key="canvasLocation" x="2533.5999999999999" y="404.34782608695656"/>
         </scene>
         <!--Home-->
         <scene sceneID="jtN-DQ-oYy">
@@ -142,6 +179,7 @@
     </scenes>
     <resources>
         <image name="feed_tab" width="25" height="25"/>
+        <image name="image_placeholder" width="375" height="375"/>
         <image name="insta_camera_btn" width="25" height="25"/>
         <image name="profile_tab" width="25" height="25"/>
     </resources>
