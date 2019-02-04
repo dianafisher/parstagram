@@ -23,18 +23,4 @@ class PostTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    func prepare(with post: Post) {
-        post.media.getDataInBackground { (imageData: Data?, error: Error?) in
-            if let error = error {
-                print("Error:\(error.localizedDescription)")
-            } else if let imageData = imageData {
-                let image = UIImage(data: imageData)
-                self.postImageView.image = image
-            }
-        }
-        
-        caption.text = post.caption
-    }
-
 }

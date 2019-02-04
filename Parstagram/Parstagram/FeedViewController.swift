@@ -13,8 +13,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet weak var tableView: UITableView!
     
-    let cellReuseIdentifier = "postCell"
-    var posts: [Post] = [Post]()
+    var posts = [PFObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,18 +27,20 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func loadPosts() {
         // construct PFQuery
-        guard let query = Post.query() else { return }
+        let query = PFQuery(className: "Post")
         query.order(byDescending: "createdAt")
         query.includeKey("author")
         query.limit = 20
         
-        // fetch data asynchronously
-        query.findObjectsInBackground { (posts, error) in
-            if let error = error {
-                print("Error:\(error.localizedDescription)")
-            } else {
-                self.posts = posts as! [Post]
+        // fetch data
+        query.findObjectsInBackground { (objects, error) in
+            if let posts = objects {
+                self.posts = posts
                 self.tableView.reloadData()
+            } else {
+                if let error = error {
+                    print("Error:\(error.localizedDescription)")
+                }
             }
         }
     }
@@ -49,10 +50,17 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let postCell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! PostTableViewCell
+        let postCell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostTableViewCell
         
         let post = self.posts[indexPath.row]
-        postCell.prepare(with: post)
+
+        let fileObject = post["media"] as! PFFileObject
+        fileObject.getDataInBackground { (data, error) in
+            if let imageData = data {
+                let image = UIImage(data: imageData)
+                postCell.postImageView.image = image
+            }
+        }
         
         return postCell
     }

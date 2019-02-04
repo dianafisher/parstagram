@@ -61,71 +61,26 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBAction func onSubmitPressed(_ sender: Any) {
         let image = capturedImageView.image
         let caption = "Placeholder"
-        Post.postUserImage(image: image, withCaption: caption) { (success, error) in
-            if (success) {
-                print("Success!!")
-            } else {
-                print("ERROR: \(String(describing: error?.localizedDescription))")
-            }
-        }
-    }
-}
 
-class Post: PFObject, PFSubclassing {
-    @NSManaged var media : PFFileObject
-    @NSManaged var author: PFUser
-    @NSManaged var caption: String
-    @NSManaged var likesCount: Int
-    @NSManaged var commentsCount: Int
-    
-    /* Needed to implement PFSubclassing interface */
-    class func parseClassName() -> String {
-        return "Post"
-    }
-    
-    /**
-     * Other methods
-     */
-    
-    /**
-     Method to add a user post to Parse (uploading image file)
-     
-     - parameter image: Image that the user wants upload to parse
-     - parameter caption: Caption text input by the user
-     - parameter completion: Block to be executed after save operation is complete
-     */
-    class func postUserImage(image: UIImage?, withCaption caption: String?, withCompletion completion: PFBooleanResultBlock?) {
-        // use subclass approach
-        let post = Post()
-        
         guard let currentUser = PFUser.current() else { return }
-        guard let media = getPFFileFromImage(image: image) else { return }
-        // Add relevant fields to the object
-        post.media = media
-        post.author = currentUser
-        post.caption = caption ?? ""
-        post.likesCount = 0
-        post.commentsCount = 0
         
-        // Save object (following function will save the object in Parse asynchronously)
-        post.saveInBackground(block: completion)
-    }
-    
-    /**
-     Method to convert UIImage to PFFile
-     
-     - parameter image: Image that the user wants to upload to parse
-     
-     - returns: PFFile for the the data in the image
-     */
-    class func getPFFileFromImage(image: UIImage?) -> PFFileObject? {
-        // check if image is not nil
         if let image = image {
-            // get image data and check if that is not nil
             if let imageData = image.pngData() {
-                return PFFileObject(name: "image.png", data: imageData)
+                let fileObject = PFFileObject(name: "image.png", data: imageData)
+                let post = PFObject(className: "Post")
+                post["author"] = currentUser
+                post["caption"] = caption
+                post["likesCount"] = 0
+                post["commentsCount"] = 0
+                post["media"] = fileObject
+                post.saveInBackground { (success, error) in
+                    if (success) {
+                        print("Successfully posted!")
+                    } else {
+                        print("ERROR: \(String(describing: error?.localizedDescription))")
+                    }
+                }
             }
         }
-        return nil
     }
 }
