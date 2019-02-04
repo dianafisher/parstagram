@@ -135,6 +135,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Capture" image="insta_camera_btn" selectedImage="insta_camera_btn" id="4kV-5l-qSP"/>
                     <connections>
+                        <outlet property="captionTextField" destination="OwX-OH-GjU" id="KOf-nn-tb7"/>
                         <outlet property="capturedImageView" destination="6Z6-XH-FlA" id="fxd-FU-Hea"/>
                     </connections>
                 </viewController>
@@ -155,7 +156,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Asv-5N-JV9">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Asv-5N-JV9">
                                 <rect key="frame" x="0.0" y="83" width="414" height="730"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -163,43 +164,43 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="446"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KzK-lE-hBZ" id="lnR-pl-kKZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="446"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="445.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hrr-60-pVS">
-                                                    <rect key="frame" x="19.5" y="4" width="375" height="375"/>
+                                                    <rect key="frame" x="19.5" y="8" width="375" height="375"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="375" id="Bjh-af-fTF"/>
                                                         <constraint firstAttribute="width" constant="375" id="XgH-9b-ShO"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="themcalpine" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VzR-b8-MyT">
-                                                    <rect key="frame" x="19.5" y="387" width="375" height="20"/>
+                                                    <rect key="frame" x="19.5" y="391" width="375" height="13"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="Da6-g3-dpZ"/>
+                                                        <constraint firstAttribute="height" constant="13" id="Da6-g3-dpZ"/>
                                                         <constraint firstAttribute="width" constant="375" id="gd1-RK-xdW"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The boys spent last night saving the galaxy..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5w-eF-Jra">
-                                                    <rect key="frame" x="19.5" y="411" width="375" height="30.5"/>
+                                                    <rect key="frame" x="19.5" y="406" width="375" height="35.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="375" id="ozP-R7-Ahb"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Hrr-60-pVS" firstAttribute="centerX" secondItem="lnR-pl-kKZ" secondAttribute="centerX" id="49F-ND-nye"/>
-                                                <constraint firstItem="X5w-eF-Jra" firstAttribute="top" secondItem="VzR-b8-MyT" secondAttribute="bottom" constant="4" id="Mb9-oT-NMH"/>
+                                                <constraint firstItem="X5w-eF-Jra" firstAttribute="top" secondItem="VzR-b8-MyT" secondAttribute="bottom" constant="2" id="Mb9-oT-NMH"/>
                                                 <constraint firstAttribute="bottom" secondItem="X5w-eF-Jra" secondAttribute="bottom" constant="4" id="ZsP-I1-v1l"/>
                                                 <constraint firstItem="VzR-b8-MyT" firstAttribute="top" secondItem="Hrr-60-pVS" secondAttribute="bottom" constant="8" id="aBD-o0-JNk"/>
                                                 <constraint firstItem="VzR-b8-MyT" firstAttribute="centerX" secondItem="lnR-pl-kKZ" secondAttribute="centerX" id="eLp-n1-dzU"/>
-                                                <constraint firstItem="Hrr-60-pVS" firstAttribute="top" secondItem="lnR-pl-kKZ" secondAttribute="top" constant="4" id="giJ-HJ-NWp"/>
+                                                <constraint firstItem="Hrr-60-pVS" firstAttribute="top" secondItem="lnR-pl-kKZ" secondAttribute="top" constant="8" id="giJ-HJ-NWp"/>
                                                 <constraint firstItem="X5w-eF-Jra" firstAttribute="centerX" secondItem="lnR-pl-kKZ" secondAttribute="centerX" id="szz-DV-fPN"/>
                                             </constraints>
                                         </tableViewCellContentView>

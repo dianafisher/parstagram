@@ -13,6 +13,7 @@ import AlamofireImage
 class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var capturedImageView: UIImageView!
+    @IBOutlet weak var captionTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +53,7 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
         
     @IBAction func onSubmitPressed(_ sender: Any) {
         let image = capturedImageView.image
-        let caption = "Placeholder"
+        let caption = captionTextField.text ?? ""
 
         guard let currentUser = PFUser.current() else { return }
         
