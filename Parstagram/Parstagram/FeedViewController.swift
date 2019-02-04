@@ -59,6 +59,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             if let imageData = data {
                 let image = UIImage(data: imageData)
                 postCell.postImageView.image = image
+                
+                let author = post["author"] as! PFUser
+                postCell.usernameLabel.text = author.username
+                
+                let caption = post["caption"] as! String
+                postCell.caption.text = caption
             }
         }
         
@@ -66,6 +72,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 404.5
+        return 446.0
     }
 }
