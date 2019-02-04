@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class FeedViewController: UIViewController {
+class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -43,9 +43,7 @@ class FeedViewController: UIViewController {
             }
         }
     }
-}
-
-extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.posts.count
     }
