@@ -12,6 +12,7 @@ import Parse
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    let refreshControl = UIRefreshControl()
     
     var posts = [PFObject]()
     
@@ -21,11 +22,19 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
         
+        refreshControl.addTarget(self, action: #selector(loadPosts), for: .valueChanged)
+        
+        // add refresh control to table view
+        tableView.insertSubview(refreshControl, at: 0)
+        
         // Do any additional setup after loading the view.
         loadPosts()
     }
-    
-    func loadPosts() {
+        
+    @objc func loadPosts() {
+        // start spinning
+        refreshControl.beginRefreshing()
+        
         // construct PFQuery
         let query = PFQuery(className: "Post")
         query.order(byDescending: "createdAt")
@@ -42,6 +51,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                     print("Error:\(error.localizedDescription)")
                 }
             }
+            self.refreshControl.endRefreshing()
         }
     }
     
