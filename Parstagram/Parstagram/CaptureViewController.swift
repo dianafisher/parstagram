@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import AlamofireImage
 
 class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -36,28 +37,19 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         // Get the image captured by the UIImagePickerController
-//        let originalImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        let editedImage = info[UIImagePickerController.InfoKey.editedImage] as! UIImage
+        let image = info[UIImagePickerController.InfoKey.editedImage] as! UIImage
+        
+        // Scale the image
+        let size = CGSize(width: 200, height: 200)
+        let scaledImage = image.af_imageScaled(to: size)
         
         // Do something with images
-        capturedImageView.image = editedImage
+        capturedImageView.image = scaledImage
         
         // Dismiss UIImagePickerController
         dismiss(animated: true, completion: nil)
     }
-    
-    func resize(image: UIImage, newSize: CGSize) -> UIImage? {        
-        let resizeImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
-        resizeImageView.contentMode = UIView.ContentMode.scaleAspectFill
-        resizeImageView.image = image
         
-        UIGraphicsBeginImageContext(resizeImageView.frame.size)
-        resizeImageView.layer.render(in: UIGraphicsGetCurrentContext()!)
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return newImage
-    }
-    
     @IBAction func onSubmitPressed(_ sender: Any) {
         let image = capturedImageView.image
         let caption = "Placeholder"
