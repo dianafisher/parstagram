@@ -132,7 +132,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="6Z6-XH-FlA">
-                                <rect key="frame" x="16" y="108" width="343" height="343"/>
+                                <rect key="frame" x="16" y="64" width="343" height="343"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="H2W-o8-MPu"/>
@@ -143,13 +143,13 @@
                                 </connections>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a caption" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OwX-OH-GjU">
-                                <rect key="frame" x="16" y="471" width="343" height="30"/>
+                                <rect key="frame" x="16" y="427" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nd8-qQ-7J1">
-                                <rect key="frame" x="163" y="521" width="49" height="30"/>
+                                <rect key="frame" x="163" y="477" width="49" height="30"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="onSubmitPressed:" destination="wQq-JE-EY0" eventType="touchUpInside" id="Euh-QO-xhZ"/>
@@ -265,7 +265,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Capture" image="insta_camera_btn" id="Kr7-hm-bda">
                             <connections>
-                                <segue destination="wQq-JE-EY0" kind="show" id="bou-na-Lbq"/>
+                                <segue destination="wQq-JE-EY0" kind="presentation" id="bou-na-Lbq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
