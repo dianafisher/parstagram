@@ -57,15 +57,17 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBAction func logOutButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
         PFUser.logOutInBackground { (error) in
             // PFUser.current() will now be nil
             if let error = error {
                 print("Error:\(error.localizedDescription)")
+            } else {
+                print("logged out")
             }
         }
-        self.dismiss(animated: true, completion: nil)
     }
-    
+        
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.posts.count
     }

@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var usernameField: UITextField!
     
@@ -26,8 +26,15 @@ class LoginViewController: UIViewController {
         gradientLayer.endPoint = CGPoint(x: 1, y: 1)
         gradientLayer.frame = view.bounds
         view.layer.insertSublayer(gradientLayer, at: 0)
+        
+        usernameField.delegate = self
+        passwordField.delegate = self
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 
     @IBAction func onSignIn(_ sender: Any) {
         let username = usernameField.text ?? ""
