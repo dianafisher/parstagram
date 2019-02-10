@@ -40,6 +40,10 @@ class LoginViewController: UIViewController {
                 print("User logged in successfully")
                 // display view controller that needs to shown after successful login
                 
+                // clear the text fields
+                self.usernameField.text = ""
+                self.passwordField.text = ""
+                                
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             }
         }
