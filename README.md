@@ -13,7 +13,7 @@ The following **required** functionality is completed:
 - [x] The current signed in user is persisted across app restarts (+1pt)
 - [x] User can take a photo, add a caption, and post it to "Instagram" (+2pt)
 - [x] User can view the last 20 posts submitted to "Instagram" (+2pt)
-- [x ] User can pull to refresh the last 20 posts submitted to "Instagram" (+1pt)
+- [x] User can pull to refresh the last 20 posts submitted to "Instagram" (+1pt)
 - [x] User can tap a post to view post details, including timestamp and caption (+2pt)
 
 The following **stretch** features are implemented:
@@ -65,7 +65,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-Copyright [yyyy] [name of copyright owner]
+Copyright [2019] [Diana Fisher]
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
