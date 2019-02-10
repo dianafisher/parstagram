@@ -20,12 +20,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
         // Do any additional setup after loading the view.
         
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [UIColor.purple.cgColor, UIColor.yellow.cgColor]
-        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
-        gradientLayer.frame = view.bounds
-        view.layer.insertSublayer(gradientLayer, at: 0)
+//        let gradientLayer = CAGradientLayer()
+//        gradientLayer.colors = [UIColor.purple.cgColor, UIColor.yellow.cgColor]
+//        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+//        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+//        gradientLayer.frame = view.bounds
+//        view.layer.insertSublayer(gradientLayer, at: 0)
         
         usernameField.delegate = self
         passwordField.delegate = self
@@ -66,6 +66,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         newUser.signUpInBackground { (success: Bool, error: Error?) in
             if success {
                 print("Yay, created a user!")
+                
+                // clear the text fields
+                self.usernameField.text = ""
+                self.passwordField.text = ""
+                
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             } else {
                 if let error = error {
@@ -74,7 +79,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         print("Username is taken")
                     }
                 }
-                
             }
         }
     }
