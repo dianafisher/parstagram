@@ -75,6 +75,7 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
                 post.saveInBackground { (success, error) in
                     if (success) {
                         print("Successfully posted!")
+                        self.navigationController?.popViewController(animated: true)
                     } else {
                         print("ERROR: \(String(describing: error?.localizedDescription))")
                     }

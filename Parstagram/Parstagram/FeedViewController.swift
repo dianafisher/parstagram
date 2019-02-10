@@ -23,9 +23,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
         
         refreshControl.addTarget(self, action: #selector(loadPosts), for: .valueChanged)
-        tableView.refreshControl = refreshControl        
+        tableView.refreshControl = refreshControl                        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        // Do any additional setup after loading the view.
         loadPosts()
     }
         
