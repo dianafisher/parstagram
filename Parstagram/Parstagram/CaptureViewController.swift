@@ -61,26 +61,23 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
         let image = capturedImageView.image
         let caption = captionTextField.text ?? ""
 
-        guard let currentUser = PFUser.current() else { return }
+        let currentUser = PFUser.current()!
         
-        if let image = image {
-            if let imageData = image.pngData() {
-                let fileObject = PFFileObject(name: "image.png", data: imageData)
-                let post = PFObject(className: "Post")
-                post["author"] = currentUser
-                post["caption"] = caption
-                post["likesCount"] = 0
-                post["commentsCount"] = 0
-                post["media"] = fileObject
-                post.saveInBackground { (success, error) in
-                    if (success) {
-                        print("Successfully posted!")
-                        self.navigationController?.popViewController(animated: true)
-                    } else {
-                        print("ERROR: \(String(describing: error?.localizedDescription))")
-                    }
-                }
+        let imageData = image?.pngData()!
+        let fileObject = PFFileObject(name: "image.png", data: imageData!)
+        let post = PFObject(className: "Post")
+        post["author"] = currentUser
+        post["caption"] = caption
+        post["likesCount"] = 0
+        post["commentsCount"] = 0
+        post["media"] = fileObject
+        post.saveInBackground { (success, error) in
+            if (success) {
+                print("Successfully posted!")
+                self.navigationController?.popViewController(animated: true)
+            } else {
+                print("ERROR: \(String(describing: error?.localizedDescription))")
             }
-        }
+        }               
     }
 }

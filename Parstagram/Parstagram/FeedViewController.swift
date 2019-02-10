@@ -22,6 +22,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
         
+        tableView.rowHeight = 446.0
+        
         refreshControl.addTarget(self, action: #selector(loadPosts), for: .valueChanged)
         tableView.refreshControl = refreshControl                        
     }
@@ -44,14 +46,13 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         // fetch data
         query.findObjectsInBackground { (objects, error) in
-            if let posts = objects {
-                self.posts = posts
-                self.tableView.reloadData()
+            if error != nil {
+                print("Error:\(error!.localizedDescription)")
             } else {
-                if let error = error {
-                    print("Error:\(error.localizedDescription)")
-                }
+                self.posts = objects!
+                self.tableView.reloadData()
             }
+            
             self.refreshControl.endRefreshing()
         }
     }
@@ -60,8 +61,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.dismiss(animated: true, completion: nil)
         PFUser.logOutInBackground { (error) in
             // PFUser.current() will now be nil
-            if let error = error {
-                print("Error:\(error.localizedDescription)")
+            if error != nil {
+                print("Error:\(error!.localizedDescription)")
             } else {
                 print("logged out")
             }
@@ -78,23 +79,16 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         let post = self.posts[indexPath.row]
 
         let fileObject = post["media"] as! PFFileObject
-        fileObject.getDataInBackground { (data, error) in
-            if let imageData = data {
-                let image = UIImage(data: imageData)
-                postCell.postImageView.image = image
-                
-                let author = post["author"] as! PFUser
-                postCell.usernameLabel.text = author.username
-                
-                let caption = post["caption"] as! String
-                postCell.caption.text = caption
-            }
-        }
+        let url = URL(string: fileObject.url!)!
+        postCell.postImageView.af_setImage(withURL: url)
+        
+        let author = post["author"] as! PFUser
+        postCell.usernameLabel.text = author.username
+        
+        let caption = post["caption"] as! String
+        postCell.caption.text = caption
         
         return postCell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 446.0
-    }
 }

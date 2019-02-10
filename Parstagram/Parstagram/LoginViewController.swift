@@ -20,13 +20,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
         // Do any additional setup after loading the view.
         
-//        let gradientLayer = CAGradientLayer()
-//        gradientLayer.colors = [UIColor.purple.cgColor, UIColor.yellow.cgColor]
-//        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-//        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
-//        gradientLayer.frame = view.bounds
-//        view.layer.insertSublayer(gradientLayer, at: 0)
-        
         usernameField.delegate = self
         passwordField.delegate = self
     }
@@ -41,8 +34,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let password = passwordField.text ?? ""
         
         PFUser.logInWithUsername(inBackground: username, password: password) { (user: PFUser?, error: Error?) in
-            if let error = error {
-                print("User log in failed: \(error.localizedDescription)")
+            if error != nil {
+                print("User log in failed: \(error!.localizedDescription)")
             } else {
                 print("User logged in successfully")
                 // display view controller that needs to shown after successful login
@@ -73,9 +66,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             } else {
-                if let error = error {
-                    print("Error: \(error.localizedDescription)")
-                    if (error as NSError).code == 202 {
+                if error != nil {
+                    print("Error: \(error!.localizedDescription)")
+                    if (error! as NSError).code == 202 {
                         print("Username is taken")
                     }
                 }
