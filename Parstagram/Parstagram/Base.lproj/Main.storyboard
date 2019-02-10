@@ -38,6 +38,7 @@
                                 <state key="normal" title="Sign In"/>
                                 <connections>
                                     <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MK9-gx-ZFE"/>
+                                    <segue destination="B77-jb-QNG" kind="presentation" identifier="loginSegue" id="JDw-CO-8AR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hau-Sg-ogw">
@@ -55,12 +56,11 @@
                     <connections>
                         <outlet property="passwordField" destination="KKR-mY-3ZB" id="ICU-UF-lbU"/>
                         <outlet property="usernameField" destination="CPG-ve-gLF" id="zCO-3q-r5Y"/>
-                        <segue destination="JEh-jX-1NL" kind="presentation" identifier="loginSegue" id="g45-1G-cBR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="558" y="144"/>
+            <point key="canvasLocation" x="697" y="-108"/>
         </scene>
         <!--Profile-->
         <scene sceneID="vNs-P7-Pg1">
@@ -97,7 +97,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="6Z6-XH-FlA">
-                                <rect key="frame" x="35.5" y="64" width="343" height="343"/>
+                                <rect key="frame" x="35.5" y="108" width="343" height="343"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="H2W-o8-MPu"/>
@@ -108,13 +108,13 @@
                                 </connections>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a caption" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OwX-OH-GjU">
-                                <rect key="frame" x="16" y="427" width="382" height="30"/>
+                                <rect key="frame" x="16" y="471" width="382" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nd8-qQ-7J1">
-                                <rect key="frame" x="182.5" y="477" width="49" height="30"/>
+                                <rect key="frame" x="182.5" y="521" width="49" height="30"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="onSubmitPressed:" destination="wQq-JE-EY0" eventType="touchUpInside" id="Euh-QO-xhZ"/>
@@ -146,9 +146,9 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2533.5999999999999" y="404.34782608695656"/>
+            <point key="canvasLocation" x="3175" y="-164"/>
         </scene>
-        <!--Home-->
+        <!--Feed View Controller-->
         <scene sceneID="jtN-DQ-oYy">
             <objects>
                 <viewController id="CRy-Hd-aub" customClass="FeedViewController" customModule="Parstagram" customModuleProvider="target" sceneMemberID="viewController">
@@ -157,7 +157,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Asv-5N-JV9">
-                                <rect key="frame" x="0.0" y="83" width="414" height="730"/>
+                                <rect key="frame" x="0.0" y="34" width="414" height="828"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="446" id="KzK-lE-hBZ" customClass="PostTableViewCell" customModule="Parstagram" customModuleProvider="target">
@@ -222,33 +222,40 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WIo-YV-uF1"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="feed_tab" selectedImage="feed_tab" id="FtE-WC-W0B"/>
+                    <navigationItem key="navigationItem" id="Wfe-gO-FWO">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="ILY-gU-5iv"/>
+                        <barButtonItem key="rightBarButtonItem" title="Capture" image="insta_camera_btn" id="Kr7-hm-bda">
+                            <connections>
+                                <segue destination="wQq-JE-EY0" kind="show" id="bou-na-Lbq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Asv-5N-JV9" id="na5-FD-5WO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3VW-lu-lY3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2533.3333333333335" y="-271.875"/>
+            <point key="canvasLocation" x="2393" y="-149"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="3ho-Eq-arx">
+        <!--Home-->
+        <scene sceneID="yRO-kl-KGq">
             <objects>
-                <tabBarController storyboardIdentifier="AuthenticatedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JEh-jX-1NL" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nIZ-a7-HPg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                <navigationController storyboardIdentifier="AuthenticatedViewController" automaticallyAdjustsScrollViewInsets="NO" id="B77-jb-QNG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="feed_tab" selectedImage="feed_tab" id="FtE-WC-W0B"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="p26-2r-UlJ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="CRy-Hd-aub" kind="relationship" relationship="viewControllers" id="Eds-Bx-JPa"/>
-                        <segue destination="wQq-JE-EY0" kind="relationship" relationship="viewControllers" id="HTM-TM-iIg"/>
-                        <segue destination="Qqt-nK-ShX" kind="relationship" relationship="viewControllers" id="dsM-tS-HmA"/>
+                        <segue destination="CRy-Hd-aub" kind="relationship" relationship="rootViewController" id="pxA-fX-61e"/>
                     </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aCv-2n-d77" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bmW-hn-FT6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1455" y="76"/>
+            <point key="canvasLocation" x="1558" y="-131"/>
         </scene>
     </scenes>
     <resources>
