@@ -146,7 +146,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3175" y="-164"/>
+            <point key="canvasLocation" x="3191" y="-141"/>
         </scene>
         <!--Feed View Controller-->
         <scene sceneID="jtN-DQ-oYy">
@@ -223,7 +223,11 @@
                         <viewLayoutGuide key="safeArea" id="WIo-YV-uF1"/>
                     </view>
                     <navigationItem key="navigationItem" id="Wfe-gO-FWO">
-                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="ILY-gU-5iv"/>
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="ILY-gU-5iv">
+                            <connections>
+                                <action selector="logOutButtonPressed:" destination="CRy-Hd-aub" id="tth-fq-QXd"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Capture" image="insta_camera_btn" id="Kr7-hm-bda">
                             <connections>
                                 <segue destination="wQq-JE-EY0" kind="show" id="bou-na-Lbq"/>
