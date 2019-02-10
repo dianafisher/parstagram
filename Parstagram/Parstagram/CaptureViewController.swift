@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import AlamofireImage
 
-class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var capturedImageView: UIImageView!
     @IBOutlet weak var captionTextField: UITextField!
@@ -19,6 +19,12 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        captionTextField.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        captionTextField.resignFirstResponder()
+        return true
     }
     
     @IBAction func onTapped(_ sender: UITapGestureRecognizer) {
