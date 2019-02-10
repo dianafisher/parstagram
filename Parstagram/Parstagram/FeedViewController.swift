@@ -23,9 +23,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
         
         refreshControl.addTarget(self, action: #selector(loadPosts), for: .valueChanged)
-        
-        // add refresh control to table view
-        tableView.insertSubview(refreshControl, at: 0)
+        tableView.refreshControl = refreshControl        
         
         // Do any additional setup after loading the view.
         loadPosts()

@@ -13,7 +13,6 @@
 		DF338FAA21D5CBBB00964959 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF338FA921D5CBBB00964959 /* Assets.xcassets */; };
 		DF338FAD21D5CBBB00964959 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF338FAB21D5CBBB00964959 /* LaunchScreen.storyboard */; };
 		DF338FB521D5DE7D00964959 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF338FB421D5DE7D00964959 /* LoginViewController.swift */; };
-		DF338FB921DAF1D800964959 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF338FB821DAF1D800964959 /* ProfileViewController.swift */; };
 		DF338FBB21DAF87F00964959 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF338FBA21DAF87F00964959 /* CaptureViewController.swift */; };
 		DF338FBD21DB285E00964959 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF338FBC21DB285E00964959 /* FeedViewController.swift */; };
 		DF338FBF21DB318B00964959 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF338FBE21DB318B00964959 /* PostTableViewCell.swift */; };
@@ -29,7 +28,6 @@
 		DF338FAC21D5CBBB00964959 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF338FAE21D5CBBB00964959 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF338FB421D5DE7D00964959 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		DF338FB821DAF1D800964959 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		DF338FBA21DAF87F00964959 /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
 		DF338FBC21DB285E00964959 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		DF338FBE21DB318B00964959 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
@@ -91,7 +89,6 @@
 				DF338FBC21DB285E00964959 /* FeedViewController.swift */,
 				DF338FB421D5DE7D00964959 /* LoginViewController.swift */,
 				DF338FBE21DB318B00964959 /* PostTableViewCell.swift */,
-				DF338FB821DAF1D800964959 /* ProfileViewController.swift */,
 				DF338FA621D5CBB900964959 /* Main.storyboard */,
 				DF338FA921D5CBBB00964959 /* Assets.xcassets */,
 				DF338FAB21D5CBBB00964959 /* LaunchScreen.storyboard */,
@@ -220,7 +217,6 @@
 			files = (
 				DF338FBF21DB318B00964959 /* PostTableViewCell.swift in Sources */,
 				DF338FB521D5DE7D00964959 /* LoginViewController.swift in Sources */,
-				DF338FB921DAF1D800964959 /* ProfileViewController.swift in Sources */,
 				DF338FA321D5CBB900964959 /* AppDelegate.swift in Sources */,
 				DF338FBD21DB285E00964959 /* FeedViewController.swift in Sources */,
 				DF338FBB21DAF87F00964959 /* CaptureViewController.swift in Sources */,
